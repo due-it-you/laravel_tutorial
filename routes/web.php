@@ -13,5 +13,5 @@ Route::get('/', function () {
 
 // リソースコントローラーの定義
 Route::resource('posts', PostController::class)->only([
-    'index', 'create'
+    'index', 'create', 'store'
 ]);
