@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+    /**
+     * 投稿の一覧表示
+     */
+    public function index() 
+    {
+        return view('post.index');
+    }
+}

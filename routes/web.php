@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// このファイルで使うコントローラーのクラスを明示的に指定
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
