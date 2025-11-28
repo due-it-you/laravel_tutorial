@@ -9,4 +9,9 @@ Route::get('/', function () {
 });
 
 // /postにGETリクエストが送信されると、Postコントローラーのindexメソッドが実行される
-Route::get('/post', [PostController::class, 'index']);
+// Route::get('/post', [PostController::class, 'index']);
+
+// リソースコントローラーの定義
+Route::resource('posts', PostController::class)->only([
+    'index'
+]);
