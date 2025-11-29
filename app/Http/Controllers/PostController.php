@@ -28,6 +28,7 @@ class PostController extends Controller
     public function store(StorePostRequest $request)
     {
         Post::create($request->validated());
-        return redirect()->route('posts.create');
+        return redirect()->route('posts.create')
+            ->with('success', '投稿が作成されました。');
     }
 }
