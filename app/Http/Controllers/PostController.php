@@ -33,4 +33,11 @@ class PostController extends Controller
         return redirect()->route('posts.create')
             ->with('success', '投稿が作成されました。');
     }
+
+    // Implicit Model Binding
+    // 暗黙的モデルバインディングで,選択されたIDに対応するモデルインスタンスを受け取れる
+    public function show(Post $post)
+    {
+        return view('posts.show', compact('post'));
+    }
 }
