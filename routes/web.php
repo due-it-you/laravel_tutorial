@@ -12,6 +12,4 @@ Route::get('/', function () {
 // Route::get('/post', [PostController::class, 'index']);
 
 // リソースコントローラーの定義
-Route::resource('posts', PostController::class)->only([
-    'index', 'create', 'store', 'show', 'edit', 'update'
-]);
+Route::resource('posts', PostController::class);
