@@ -16,7 +16,9 @@ class PostController extends Controller
      */
     public function index() 
     {
-        return view('post.index');
+        $posts = Post::all();
+        // compact関数でコントローラーからビューにデータを渡す
+        return view('posts.index', compact('posts'));
     }
 
     public function create()
