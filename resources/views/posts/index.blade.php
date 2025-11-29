@@ -12,6 +12,13 @@
         <div class="border hover:bg-gray-300">
           {{ $post->name }}
         </div>
+        <!-- 削除ボタン -->
+        <form action="{{ route('posts.destroy', $post->id) }}" method="POST">
+          @csrf
+          <!-- メソッドを指定 -->
+          @method('DELETE')
+          <button type="submit" onClick="return confirm('本当に削除しますか？')" class="border text-white bg-red-700">削除</button>
+        </form>
       </a>
     @endforeach
   </div>
