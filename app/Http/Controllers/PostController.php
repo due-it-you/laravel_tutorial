@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+// Request 
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostRequest;
 
+// Model
 use App\Models\Post;
 
 class PostController extends Controller
@@ -21,9 +24,10 @@ class PostController extends Controller
         return view('posts.create');
     }
 
-    public function store(Request $request)
+    // FormRequestでバリデーションを分離(app/Http/Requests/StorePostRequest.php)
+    public function store(StorePostRequest $request)
     {
-        Post::create($request->all());
+        Post::create($request->validated());
         return redirect()->route('posts.create');
     }
 }
