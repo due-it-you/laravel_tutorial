@@ -49,6 +49,7 @@ class PostController extends Controller
 
     public function update(UpdatePostRequest $request, Post $post)
     {
+        // 更新は特定のインスタンスの内容を更新するので、インスタンスメソッドとして呼び出す
         $post->update($request->validated());
         return redirect()->route('posts.index')
             ->with('success', '投稿を更新しました。');
